@@ -1,0 +1,2 @@
+winmanager.vba: call delete('/home/xuq/.vim/doc/winmanager.txt')|call delete('/home/xuq/.vim/plugin/start.gnome')|call delete('/home/xuq/.vim/plugin/start.kde')|call delete('/home/xuq/.vim/plugin/winfileexplorer.vim')|call delete('/home/xuq/.vim/plugin/winmanager.vim')|call delete('/home/xuq/.vim/plugin/wintagexplorer.vim')
+mark-2.8.5.vmb: call delete('/Users/xuq/.vim/autoload/mark.vim')|call delete('/Users/xuq/.vim/autoload/mark/palettes.vim')|call delete('/Users/xuq/.vim/plugin/mark.vim')|call delete('/Users/xuq/.vim/doc/mark.txt')
