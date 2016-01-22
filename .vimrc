@@ -13,17 +13,27 @@ set showcmd
 set showmatch "highlight matching {[()]}
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
-let mapleader=","       " leader is comma
-
+"let mapleader=","       " leader is comma
+"set spell spelllang=en_us  " check spell all the time
+setlocal spell spelllang=en_us   " only check spell in text mode
+set spellfile=$HOME/.vim/en.utf-8.add
+"
 " CtrlP settings
  let g:ctrlp_match_window = 'bottom,order:ttb'
  let g:ctrlp_switch_buffer = 0
- let g:ctrlp_working_path_mode = 0
+ let g:ctrlp_working_path_mode = "ra"
  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 colorscheme solarized
+"colorscheme jellybeans
 "colorscheme delek 
+
+"Set intent
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+"
 nmap <F1> :CtrlP <CR>
 nmap <F2> <C-W>
 nmap <F4> :BufExplorer  <CR>
@@ -63,6 +73,8 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'Yggdroot/indentLine'
 
 filetype plugin indent on
 
@@ -85,7 +97,8 @@ EOF
 endif
 
 "let g:SuperTabDefaultCompletionType = <c-x><c-o>
-let g:SuperTabDefaultCompletionType = 'context'
+"let g:SuperTabDefaultCompletionType = 'context'
+let g:SuperTabContextDefaultCompletionType = "<c-n>"
 set nocompatible
 set backspace=indent,eol,start
 
@@ -97,7 +110,7 @@ let g:jedi#usages_command = "<leader>n"
 let g:jedi#rename_command = "<leader>r"
 let g:jedi#use_tabs_not_buffers = 0
 " Load rope plugin
-let g:jedi#show_call_signatures = 1
+let g:jedi#show_call_signatures = 0
 let g:jedi#popup_on_dot = 0
 let g:pymode_rope = 0
 
